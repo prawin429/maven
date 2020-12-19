@@ -1,3 +1,5 @@
+currentBuild.displayName="praveen.com-#"+currentBuild.number
+
 pipeline{
     agent any
     stages{
