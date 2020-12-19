@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("gitcheckout"){
             steps{
-                git 'https://github.com/prawin429/maven.git'
+                https://github.com/prawin429/maven.git
             }
         }
     }
