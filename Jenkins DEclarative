@@ -6,5 +6,10 @@ pipeline{
                git 'https://github.com/prawin429/maven.git'
             }
         }
+        stage("maven build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
     }
 }
