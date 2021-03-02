@@ -1,6 +1,6 @@
 # Pull base image 
 From tomcat:8-jre8 
-RUN apk update && apk add /bin/sh
+
 
 ENV PROJECT_HOME /usr/local/tomcat/webapps
 
