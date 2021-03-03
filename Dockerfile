@@ -1,11 +1,21 @@
-# Pull base image 
-From tomcat:8-jre8 
+FROM ubuntu
 
+MAINTAINER ybmsr <ybmadhu404@gmail.com>
 
-ENV PROJECT_HOME /usr/local/tomcat/webapps
+WORKDIR /usr/apps/hello-docker/
 
+RUN apt-get -y update
 
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY target/webapp.war $PROJECT_HOME/webapp.war
+RUN apt-get install -y nodejs
 
+RUN apt-get install -y npm
+
+#RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+RUN npm install -g http-server
+
+ADD . /usr/apps/hello-docker/
+
+ADD index.html /usr/apps/hello-docker/index.html
+
+CMD ["http-server", "-s"]
